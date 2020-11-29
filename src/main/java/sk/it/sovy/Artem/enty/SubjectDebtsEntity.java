@@ -88,4 +88,12 @@ public class SubjectDebtsEntity {
     public void setStudentsById(List<StudentEntity> studentsById) {
         this.studentsById = studentsById;
     }
+
+    public void add(StudentEntity studentEntity) {
+        if (studentsById == null) {
+            studentsById = new ArrayList<>();
+        }
+        studentsById.add(studentEntity);
+        studentEntity.setSubjectDebtsBySubjectId(this);
+    }
 }

@@ -154,4 +154,20 @@ public class StudentEntity {
     public void setSubjectDebtsBySubjectId(SubjectDebtsEntity subjectDebtsBySubjectId) {
         this.subjectDebtsBySubjectId = subjectDebtsBySubjectId;
     }
+
+    @Override
+    public String toString() {
+        return "StudentEntity{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", birthdate=" + birthdate +
+                ", phoneNumber=" + phoneNumber +
+                ", enrollDate=" + enrollDate +
+                ", faculty='" + faculty + '\'' +
+                ", course='" + course + '\'' +
+                ", groupNumber=" + groupNumber +
+                '}';
+    }
 }

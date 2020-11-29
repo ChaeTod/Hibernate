@@ -35,12 +35,16 @@ public class CreateStudent {
             // create the objects
             //StudentEntity student_1 = new StudentEntity("Tom", "Marty", "23 Groove St.", currentTime, "66448315", "11.09.12", "IT", 3, 933);
             StudentEntity student_1 = new StudentEntity("Tom", "Marty", "23 Groove St.", currentTime,15646413, date, "IT", "Third", 931);
+            StudentEntity student_2 = new StudentEntity("Nick", "Chuckles", "11th Panama-Ave", currentTime,15646413, date, "IT", "Second", 921);
 
             SubjectDebtsEntity subjectDebtsEntity = new SubjectDebtsEntity("Math", 5, "-", 12);
 
             // associate the objects
             //student_1.setInstructorDetailByInstructorDetailId(instructorDetailEntity);
-            student_1.setSubjectDebtsBySubjectId(subjectDebtsEntity);
+            //student_1.setSubjectDebtsBySubjectId(subjectDebtsEntity);
+
+            subjectDebtsEntity.add(student_1);
+            subjectDebtsEntity.add(student_2);
 
             // start a transaction
             session.beginTransaction();
