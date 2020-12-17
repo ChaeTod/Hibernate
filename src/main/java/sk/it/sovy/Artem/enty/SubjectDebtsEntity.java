@@ -7,6 +7,7 @@ import java.util.List;
 @Entity
 @Table(name = "subject_debts", schema = "edr-onetomany-student")
 public class SubjectDebtsEntity {
+
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,10 +29,11 @@ public class SubjectDebtsEntity {
     @Column(name = "debts", nullable = true)
     private Integer debts;
 
-    @OneToMany(targetEntity = StudentEntity.class, fetch = FetchType.LAZY, mappedBy = "subjectDebtsBySubjectId", cascade=CascadeType.ALL)
+    @OneToMany(targetEntity = StudentEntity.class, fetch = FetchType.LAZY, mappedBy = "subjectDebtsBySubjectId", cascade = CascadeType.ALL)
     private List<StudentEntity> studentsById;
 
     public SubjectDebtsEntity() {
+
     }
 
     public SubjectDebtsEntity(String title, Integer duration, String rating, Integer debts) {
@@ -89,6 +91,7 @@ public class SubjectDebtsEntity {
         this.studentsById = studentsById;
     }
 
+    // add convenience methods for bi-directional relationship
     public void add(StudentEntity studentEntity) {
         if (studentsById == null) {
             studentsById = new ArrayList<>();

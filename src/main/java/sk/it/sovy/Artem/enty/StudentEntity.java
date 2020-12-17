@@ -48,9 +48,9 @@ public class StudentEntity {
     @Column(name = "group_number", nullable = true)
     private Integer groupNumber;
 
-    @ManyToOne(targetEntity = SubjectDebtsEntity.class, cascade=CascadeType.ALL)
+    @ManyToOne(targetEntity = SubjectDebtsEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "subject_id", referencedColumnName = "id")
-    private SubjectDebtsEntity subjectDebtsBySubjectId;
+    private SubjectDebtsEntity subjectDebtsBySubjectId; // set up a relationship between student and his debts
 
     public StudentEntity() {
     }

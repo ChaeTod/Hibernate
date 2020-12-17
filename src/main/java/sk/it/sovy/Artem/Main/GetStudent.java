@@ -19,12 +19,12 @@ public class GetStudent {
             // start a transaction
             session.beginTransaction();
 
-            int temp_id = 2;
+            int temp_id = 5;
             // save the instructor
             // this will ALSO save the details object because of CascadeType.ALL
             System.out.println("Get student's phone number with an id: ");
             StudentEntity studentEntity = session.get(StudentEntity.class, temp_id);
-            System.out.println(studentEntity.getPhoneNumber());
+            System.out.println(studentEntity.toString());
 
             // commit transaction
             session.getTransaction().commit();

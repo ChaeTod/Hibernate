@@ -19,7 +19,7 @@ public class DeleteStudent {
             // start a transaction
             session.beginTransaction();
 
-            int temp_id = 4;
+            int temp_id = 10;
             // save the instructor
             // this will ALSO save the details object because of CascadeType.ALL
             System.out.println("Deleting the student with picked id");

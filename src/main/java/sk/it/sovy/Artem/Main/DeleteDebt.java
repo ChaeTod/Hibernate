@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 import sk.it.sovy.Artem.enty.StudentEntity;
 import sk.it.sovy.Artem.enty.SubjectDebtsEntity;
 
-public class UpdateStudent {
+public class DeleteDebt {
     public static void main(String[] args) {
 
         // create session factory
@@ -19,16 +19,12 @@ public class UpdateStudent {
             // start a transaction
             session.beginTransaction();
 
-            int temp_id = 2;
-            // save the student
+            int temp_id = 6;
+            // save the instructor
             // this will ALSO save the details object because of CascadeType.ALL
-
-            StudentEntity studentEntity = session.get(StudentEntity.class, temp_id);
-            System.out.println("Student's old name: " + studentEntity.getFirstName());
-            System.out.println("Updating student's name... ");
-            studentEntity.setFirstName("Rick");
-            session.update(studentEntity);
-            System.out.println("Student's new name: " + studentEntity.getFirstName());
+            System.out.println("Deleting the student's debt with picked id");
+            SubjectDebtsEntity subjectDebtsEntity = session.get(SubjectDebtsEntity.class, temp_id);
+            session.delete(subjectDebtsEntity);
 
             // commit transaction
             session.getTransaction().commit();
